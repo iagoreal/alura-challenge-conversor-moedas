@@ -23,7 +23,7 @@ public class getPairConversion {
         double amountSelected = amount.nextDouble();
 
 
-        URI resultConversion = URI.create("https://v6.exchangerate-api.com/v6/{apiKey}/pair/"+base_coin_selected+"/"+target_coin_selected+"/"+amountSelected);
+        URI resultConversion = URI.create("https://v6.exchangerate-api.com/v6/"+System.getenv("apiKey")+"/pair/"+base_coin_selected+"/"+target_coin_selected+"/"+amountSelected);
 
                 HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
