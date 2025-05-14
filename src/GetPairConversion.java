@@ -22,7 +22,7 @@ public class GetPairConversion {
 
             while(true) {
                 System.out.print("Digite o código da moeda que deseja usar como base da conversão: ");
-                baseCoinSelected = scanner.nextLine();
+                baseCoinSelected = scanner.nextLine().toUpperCase();
                 if(coinSuported.contains(baseCoinSelected)){
                    break;
                 }
@@ -31,7 +31,7 @@ public class GetPairConversion {
 
             while(true) {
                 System.out.print("Digite o código da moeda que deseja usar como alvo da conversão: ");
-                targetCoinSelected = scanner.nextLine();
+                targetCoinSelected = scanner.nextLine().toUpperCase();
                 if(coinSuported.contains(targetCoinSelected)){
                     break;
                 }
@@ -54,11 +54,11 @@ public class GetPairConversion {
         }
 
 
-        URI resultConversion = URI.create("https://v6.exchangerate-api.com/v6/"+System.getenv("apiKey")+"/pair/"+baseCoinSelected+"/"+targetCoinSelected+"/"+amountSelected);
+        URI url = URI.create("https://v6.exchangerate-api.com/v6/"+System.getenv("apiKey")+"/pair/"+baseCoinSelected+"/"+targetCoinSelected+"/"+amountSelected);
 
                 HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(resultConversion)
+                .uri(url)
                 .build();
 
         HttpResponse<String> response = null;

@@ -1,4 +1,10 @@
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +12,7 @@ public class Main {
 
         boolean condition = true;
         GetPairConversion pairConversion = new GetPairConversion();
+        AllCodesSuported allCodesSuported = new AllCodesSuported();
 
 
         while(condition){
@@ -33,6 +40,10 @@ public class Main {
                 }
                 switch (chose){
                     case 1:
+                        Conversion codes = allCodesSuported.codesSuported();
+                        for (Object currency : codes.supported_codes()) {
+                            System.out.println(currency);
+                        }
 
                         break;
                     case 2:
