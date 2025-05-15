@@ -4,6 +4,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Path;
 import java.util.Scanner;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -18,7 +19,8 @@ public class GetPairConversion {
         double amountSelected=0;
 
         try {
-            List<String> coinSuported = Files.readAllLines(Paths.get("/home/qwerty/IdeaProjects/ConversorMoeda/src/codes.txt"));
+            Path codes = Paths.get("src/codes.txt");
+            List<String> coinSuported = Files.readAllLines(codes);
 
             while(true) {
                 System.out.print("Digite o código da moeda que deseja usar como base da conversão: ");
