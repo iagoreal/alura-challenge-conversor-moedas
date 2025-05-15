@@ -33,6 +33,8 @@ Este projeto é ideal para quem deseja se aprofundar em desenvolvimento Java com
 
 ## ▶️ Como executar
 
+# Substitua  " System.getenv("apiKey") " nas requisições à API pela sua chave API (https://www.exchangerate-api.com/)
+
 ### 1. Compile os arquivos
 
 ```bash
